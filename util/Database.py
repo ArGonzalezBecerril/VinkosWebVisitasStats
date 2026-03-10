@@ -40,7 +40,7 @@ class WebVinkosDao:
             logging.info("¡Se cargo la informacion de visitante correctamente")
             return True
         except Exception as e:
-            logging.error(f"Valió m... la carga a PROD: {e}")
+            logging.error(f"Error en la carga a PROD: {e}")
             return False
 
     def inserta_estadistica(self, dfrm_estadisticas):
