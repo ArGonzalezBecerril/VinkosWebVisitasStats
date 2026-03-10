@@ -12,8 +12,8 @@ logging.basicConfig(
 
 class FileControl:
     def __init__(self):
-        self.ruta_base = "/home/arturo/vinkOS/archivosVisitas"
-        self.ruta_respaldo = "/home/arturo/vinkOS/respaldos"
+        self.ruta_base = "/home/usuario/vinkOS/archivosVisitas"
+        self.ruta_respaldo = "/home/usuario/vinkOS/respaldos"
         self.bitacora_path = os.path.join(os.getcwd(), "config", "bitacora_control.txt")
 
     def obtener_archivos_en_ruta(self):
