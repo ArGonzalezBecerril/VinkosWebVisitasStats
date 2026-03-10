@@ -15,7 +15,7 @@ class WebVinkosDao:
         logging.info("[Ok] Se cargaran a la BD la informacion de Visitas y Estadisticas")
 
     def obten(self):
-        engine = create_engine('mysql+mysqlconnector://arturo:123@localhost/bd_visitas')
+        engine = create_engine('mysql+mysqlconnector://usuario:pwd@localhost/bd_visitas')
         return engine
 
     def inserta_visitas(self, dfrm_web_vinkos):
@@ -70,7 +70,7 @@ class WebVinkosDao:
         for col in columnas_fecha:
             df_estadisticas[col] = pd.to_datetime(df_estadisticas[col], dayfirst=True, errors='coerce')
 
-        engine = create_engine('mysql+mysqlconnector://arturo:123@localhost/bd_visitas')
+        engine = create_engine('mysql+mysqlconnector://usuario:pwd@localhost/bd_visitas')
 
         try:
             df_estadisticas.to_sql(
