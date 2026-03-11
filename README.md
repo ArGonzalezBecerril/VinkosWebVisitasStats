@@ -137,3 +137,5 @@ CREATE TABLE `visitante` (
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 ```
+### Integración con metabase.
+<img width="1022" height="415" alt="imagen" src="https://github.com/user-attachments/assets/244845cb-ca2f-4cf6-95c2-955ac1715632" />
