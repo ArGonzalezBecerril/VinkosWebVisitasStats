@@ -87,3 +87,53 @@ INFO:root:Iniciando carga de Estadísticas...
 **python-dotenv:** Para no dejar tus contraseñas embarradas en el código (usar el .env).
 
 **paramiko:** Necesario para la extracción por SFTP del servidor 8.8.8.8.(Este no se uso ya que por ahora se simulo un folder local)
+
+## Ambientación de BD
+
+Crear las tablas
+```sql
+
+create database bd_visitas;
+use bd_visitas;
+--Estadistica
+DROP TABLE IF EXISTS `estadistica`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `estadistica` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(150) DEFAULT NULL,
+  `jv` varchar(50) DEFAULT NULL,
+  `Badmail` varchar(10) DEFAULT 'No',
+  `Baja` varchar(10) DEFAULT 'No',
+  `Fecha_envio` datetime DEFAULT NULL,
+  `Fecha_open` datetime DEFAULT NULL,
+  `Opens` int(11) DEFAULT NULL,
+  `Opens_virales` int(11) DEFAULT NULL,
+  `Fecha_click` datetime DEFAULT NULL,
+  `Clicks` int(11) DEFAULT NULL,
+  `Clicks_virales` int(11) DEFAULT NULL,
+  `Links` text DEFAULT NULL,
+  `IPs` text DEFAULT NULL,
+  `Navegadores` text DEFAULT NULL,
+  `Plataformas` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=504 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--Visitante
+DROP TABLE IF EXISTS `visitante`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `visitante` (
+  `email` varchar(255) NOT NULL,
+  `fechaPrimeraVisita` datetime DEFAULT NULL,
+  `fechaUltimaVisita` datetime DEFAULT NULL,
+  `visitasTotales` bigint(20) DEFAULT NULL,
+  `visitasAnioActual` bigint(20) DEFAULT NULL,
+  `visitasMesActual` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+```
